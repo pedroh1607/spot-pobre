@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --gradient:linear-gradient(0deg, rgba(239,0,255,1) 0%, rgba(95,9,121,1) 41%, rgba(2,0,36,1) 100%);;
+}
+body{
+    background: black;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+.conteiner{
+    display: flex;
+    height: 100vh;
+}
+/*vai se foder, vai tomar no cu filho da puta do caralohukabhsdkvabskvbdasbv*/
+.side-bar{
+    width: 300px;
+    height: 99vh;
+    background: #121212;
+    padding:24px 24px 90px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 1px;
+    border-radius: 10px;
+    height: 96vh;
+    z-index: 1;
+}
+.side-bar-conteiner{
+    position: relative; 
+    width: 300px;
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 10px 16px;
+}
+.side-bar-conteiner::before{
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+
+    background: var(--gradient);
+    
+    animation: animate 5s linear infinite  ;
+}
+@keyframes animate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.nav-logo i{
+    font-size: 24px;
+}
+.nav-library {
+    color: #b3b3b3;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor:pointer;
+}
+.nav-podcast , .nav-playlist {
+    background: #d502ff34;
+    border-radius: 10px;
+    padding: 16px;
+}
+.nav-podcast button, .nav-playlist button , .nav-languege-button{
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 4px;
+    color: black ;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.nav-footer a{
+    text-decoration: none ;
+    color: #777777;
+    font-size: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+.nav-footer a:hover{
+    transition: 150ms;
+    color: purple;
+}
+.nav-footer{
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.nav-languege-button{
+    background: transparent;
+    color: #fff ;
+    border: 1px solid #ea00ff ;
+    display: flex;
+    padding: 10px ;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
+}
+.nav-languege-button:hover{
+transition: 150ms;
+padding-bottom: 12px;
+background: #31014d;
+}
+
