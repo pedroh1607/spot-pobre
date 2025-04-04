@@ -51,9 +51,14 @@
       </div>
       
       <main>
-        <header class="search-bar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input placeholder="o qeu você quer ouvir?" type="text" />
+        <header >
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input placeholder="o qeu você quer ouvir?" type="text" />
+          </div>
+          <div> 
+            <a href="https://accounts.spotify.com/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user-library-read%20playlist-read-private">Login com Spotify</a>
+          </div>
         </header>
         <section class="content">
           <h2>Artistas populares</h2>
@@ -66,4 +71,22 @@
       </main>
     </div>
   </body>
+  <script src="./spot-backand/index.js"></script>
+  <script>
+    // Após pegar os dados da API
+    const albumContainer = document.getElementById('albums-grid');
+    
+    data.items.forEach(album => {
+      const albumDiv = document.createElement('div');
+      const albumImage = document.createElement('img');
+      albumImage.src = album.images[0].url;  // Imagem do álbum
+      albumDiv.appendChild(albumImage);
+      
+      const albumName = document.createElement('h3');
+      albumName.textContent = album.name; // Nome do álbum
+      albumDiv.appendChild(albumName);
+      
+      albumContainer.appendChild(albumDiv);
+    });
+  </script>
 </html>
