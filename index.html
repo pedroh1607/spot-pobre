@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/5092319554.js"
       crossorigin="anonymous"
@@ -11,11 +11,9 @@
     <title>spotpobre</title>
   </head>
   <body>
-    
     <div class="conteiner">
-      <div class ="side-bar-conteiner">
-       <nav class="side-bar">
-          
+      <div class="side-bar-conteiner">
+        <nav class="side-bar">
           <div class="nav-logo">
             <i class="fa-brands fa-spotify"></i>
           </div>
@@ -34,59 +32,85 @@
             <button>Explore podcasts</button>
           </div>
           <div class="nav-footer">
-            <a href="#">legal</a>
-            <a href="#">seguranca e centro de privacidade</a>
-            <a href="#">politica de privacidade</a>
-            <a href="#">cookies</a>
-            <a href="#">acessibilidade</a>
-            <a href="#">sobre anuncios</a>
-            <a href="#">cookies</a>
+            <a href="https://www.spotify.com/br-pt/legal/end-user-agreement/">legal</a>
+            <a href="https://www.spotify.com/br-pt/safetyandprivacy">seguranca e centro de privacidade</a>
+            <a href="https://www.spotify.com/br-pt/legal/privacy-policy/">politica de privacidade</a>
+            <a href="https://www.spotify.com/br-pt/legal/cookies-policy/">cookies</a>
+            <a href="https://www.spotify.com/br-pt/accessibility">acessibilidade</a>
+            <a href="https://www.spotify.com/br-pt/legal/privacy-policy/#s3">sobre anuncios</a>
+            <a href="https://www.spotify.com/br-pt/legal/cookies-policy/">cookies</a>
           </div>
           <button class="nav-languege-button">
             <i class="fa-solid fa-globe"></i>
             <p>Português Brasil</p>
           </button>
         </nav>
- 
       </div>
-      
+
       <main>
-        <header >
+        <header>
           <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input placeholder="o qeu você quer ouvir?" type="text" />
+            <input
+              id="searchInput"
+              placeholder="o qeu você quer ouvir?"
+              type="text"
+            />
           </div>
-          <div> 
-            <a href="https://accounts.spotify.com/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user-library-read%20playlist-read-private">Login com Spotify</a>
+          <div>
+            <a
+              href="https://accounts.spotify.com/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&scope=user-library-read%20playlist-read-private"
+              >Login com Spotify</a
+            >
           </div>
         </header>
+
+
+
         <section class="content">
-          <h2>Artistas populares</h2>
-          <div class="artists-grid">
-            <!--enserir dados usando o js com api-->
-          </div>
-          <h2>Álbuns populares</h2>
-          <div class="albums-grid"></div>
+          <section class="artists">
+            <head>
+              <h2>Artistas populares</h2>
+            </head>
+            <div class="artists-grid" id="artists-grid">
+              <!--enserir dados usando o js com api-->
+            </div>
+          </section>
+          <section class="albums">
+            <head>
+              <h2>Álbuns populares</h2>
+            </head>
+            <div class="albums-grid" id="albums-grid">
+              <!--enserir dados usando o js com api-->
+            </div>
+          </section>
         </section>
       </main>
+
+
+
+
+
     </div>
+    <script src="./script.js"></script>
+    <!--
+    <script>
+      // Após pegar os dados da API
+      const albumContainer = document.getElementById("albums-grid");
+
+      data.items.forEach((album) => {
+        const albumDiv = document.createElement("div");
+        const albumImage = document.createElement("img");
+        albumImage.src = album.images[0].url; // Imagem do álbum
+        albumDiv.appendChild(albumImage);
+
+        const albumName = document.createElement("h3");
+        albumName.textContent = album.name; // Nome do álbum
+        albumDiv.appendChild(albumName);
+
+        albumContainer.appendChild(albumDiv);
+      });
+    </script>
+    -->
   </body>
-  <script src="./spot-backand/index.js"></script>
-  <script>
-    // Após pegar os dados da API
-    const albumContainer = document.getElementById('albums-grid');
-    
-    data.items.forEach(album => {
-      const albumDiv = document.createElement('div');
-      const albumImage = document.createElement('img');
-      albumImage.src = album.images[0].url;  // Imagem do álbum
-      albumDiv.appendChild(albumImage);
-      
-      const albumName = document.createElement('h3');
-      albumName.textContent = album.name; // Nome do álbum
-      albumDiv.appendChild(albumName);
-      
-      albumContainer.appendChild(albumDiv);
-    });
-  </script>
 </html>
