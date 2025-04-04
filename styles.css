@@ -169,12 +169,12 @@ background: #31014d;
     width: 100%;
     padding: 10px;
     display: grid;
-    grid-template-rows: 396px;
+    grid-auto-flow: row;
 }
 
 .albums-grid , .artists-grid{
     display:grid;
-    
+
 }
 
 
